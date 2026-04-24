@@ -35,7 +35,11 @@ An AI agent skill that generates IEEE-format technical reports as LaTeX. Point i
 Clone this repository into your agent's skills directory:
 
 ```bash
-git clone https://github.com/EnesDemir143/awesome-ieee-report ~/.agents/skills/awesome-ieee-report
+# Claude Code
+git clone https://github.com/EnesDemir143/awesome-ieee-report ~/.claude/skills/awesome-ieee-report
+
+# OpenAI Codex CLI
+git clone https://github.com/EnesDemir143/awesome-ieee-report ~/.codex/skills/awesome-ieee-report
 ```
 
 **2. Invoke**
