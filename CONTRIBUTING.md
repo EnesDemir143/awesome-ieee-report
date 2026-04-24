@@ -24,6 +24,10 @@ Contributions are welcome. Please keep changes focused and minimal.
 - Changes that break the zero-code-artifact rule
 - Hardcoded language assumptions
 
+## License
+
+By contributing, you agree that your contributions will be licensed under MIT License.
+
 ## Reporting Issues
 
 Open a [GitHub Issue](https://github.com/EnesDemir143/awesome-ieee-report/issues) with:
