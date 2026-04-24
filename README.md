@@ -32,7 +32,11 @@ An AI agent skill that generates IEEE-format technical reports as LaTeX. Point i
 
 **1. Install the skill**
 
-Copy the `latex-report-creator/` folder into your agent's skills directory.
+Clone this repository into your agent's skills directory:
+
+```bash
+git clone https://github.com/EnesDemir143/awesome-ieee-report ~/.agents/skills/awesome-ieee-report
+```
 
 **2. Invoke**
 

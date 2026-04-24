@@ -1,6 +1,6 @@
 ---
-name: latex-report-creator
-description: Generates IEEE-format technical reports as LaTeX by reading requirement documents, analyzing the codebase for evidence, and producing academic prose with zero code artifacts. Use when the user asks for a technical report, LaTeX report, IEEE formatting, or project documentation generation.
+name: awesome-ieee-report
+description: Generates IEEE-format LaTeX technical reports from project requirements and codebase evidence, using academic prose, pseudocode-only explanations, BibTeX references, and IEEEtran formatting.
 ---
 
 # LaTeX Technical Report Creator
