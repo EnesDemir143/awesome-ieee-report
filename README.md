@@ -4,6 +4,12 @@ An AI agent skill that generates IEEE-format technical reports as LaTeX. Point i
 
 ---
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=EnesDemir143/awesome-ieee-report&type=Date)](https://star-history.com/#EnesDemir143/awesome-ieee-report&Date)
+
+---
+
 ## Features
 
 - **Requirement-driven structure** — reads your requirement document and derives section headings from it; falls back to standard IEEE baseline when no document is provided
