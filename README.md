@@ -2,16 +2,92 @@
 
 A Kiro skill that generates IEEE-format technical reports as LaTeX. Point it at your project, and it reads the codebase, maps requirements to sections, and produces a publication-ready `.tex` + `.bib` output with zero code artifacts in the report body.
 
-## What It Does
+---
 
-- Reads your requirement document (optional) and derives section structure from it
-- Analyzes the codebase internally to extract architecture, algorithm, and behavior facts
-- Writes purely academic prose — no file paths, class names, or code identifiers in the report
-- Produces a `IEEEtran` two-column `.tex` file + `references.bib`
-- Inserts labeled figure placeholders you replace with real screenshots
-- Runs a quality gate checklist before finalizing
+## Features
 
-## Structure
+- **Requirement-driven structure** — reads your requirement document and derives section headings from it; falls back to standard IEEE baseline when no document is provided
+- **Zero code artifacts** — no file paths, class names, or function names in the report body; everything is described in academic prose
+- **Pseudocode only** — core algorithms are expressed using the IEEE `algorithm` environment, never raw source code
+- **Figure placeholders** — labeled `\fbox{}` placeholders with capture intent; you replace them with real screenshots manually
+- **BibTeX output** — generates a `references.bib` alongside the `.tex` file
+- **Quality gate** — built-in checklist that verifies every rule before the report is finalized
+- **Language-agnostic** — English by default; Turkish (or any babel-supported language) on request
+
+---
+
+## Key Topics
+
+- IEEE `IEEEtran` conference class
+- Two-column academic layout
+- `booktabs` tables for parameters, thresholds, and comparisons
+- `algorithm` + `algorithmic` environments for pseudocode
+- BibTeX / `\cite{}` reference management
+- Figure placeholder workflow
+- Requirement-to-section mapping
+
+---
+
+## How to Use
+
+**1. Install the skill**
+
+Copy or symlink the `latex-report-creator/` folder into your Kiro skills directory:
+
+```
+~/.kiro/skills/latex-report-creator → /path/to/latex-report-creator
+```
+
+**2. Invoke in Kiro**
+
+```
+Write an IEEE technical report for this project.
+```
+
+With a requirement document:
+
+```
+Write an IEEE technical report based on requirements.pdf.
+Report language: English
+Author: Jane Doe, Computer Engineering, MIT
+```
+
+**3. Provide inputs when prompted**
+
+| Input | Required | Default |
+|---|---|---|
+| Requirement document (PDF/MD) | No | Standard IEEE baseline |
+| Target scope | Yes | — |
+| Output directory | Yes | — |
+| Report language | No | English |
+| Author name & affiliation | Yes | — |
+
+**4. Compile the output**
+
+```bash
+pdflatex report.tex
+bibtex report
+pdflatex report.tex
+pdflatex report.tex
+```
+
+Or use `latexmk`:
+
+```bash
+latexmk -pdf report.tex
+```
+
+**5. Replace figure placeholders**
+
+Find every `\fbox{...PLACEHOLDER...}` block and replace with:
+
+```latex
+\setlength{\fboxsep}{0pt}\fbox{\includegraphics[width=0.57\linewidth]{images/your-screenshot.png}}
+```
+
+---
+
+## Repository Structure
 
 ```
 latex-report-creator/
@@ -32,37 +108,17 @@ latex-report-creator/
     └── sample-filled-outline.md      # Example filled report outline
 ```
 
-## Usage
+---
 
-Install the skill into your Kiro skills directory, then ask:
+## Community & Feedback
 
-```
-Write an IEEE technical report for this project.
-```
+Found a bug, have a suggestion, or want to contribute a template?
 
-Or with a requirement document:
+- **Issues** — open a [GitHub Issue](https://github.com/EnesDemir143/awesome-ieee-report/issues) for bug reports or feature requests
+- **Discussions** — use [GitHub Discussions](https://github.com/EnesDemir143/awesome-ieee-report/discussions) for questions, ideas, and sharing reports you've generated
+- **Pull Requests** — contributions are welcome; please keep changes focused and include a short description of what was changed and why
 
-```
-Write an IEEE technical report based on requirements.pdf.
-```
-
-The skill collects: requirement document (optional), target scope, output directory, report language, and author info — then builds the full report.
-
-## Output
-
-Every run produces:
-
-1. `.tex` file using `\documentclass[conference]{IEEEtran}`
-2. `references.bib` with all cited sources
-3. Build README explaining how to compile
-4. At least 3 labeled figure placeholders
-
-## Key Rules
-
-- No source code in the report — pseudocode only (IEEE `algorithm` environment)
-- All figures are placeholders; real images are added manually
-- Report language follows user preference (default: English)
-- Requirement document drives section structure when provided; standard IEEE baseline otherwise
+---
 
 ## License
 
