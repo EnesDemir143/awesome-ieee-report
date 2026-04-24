@@ -1,6 +1,6 @@
 # awesome-ieee-report
 
-A Kiro skill that generates IEEE-format technical reports as LaTeX. Point it at your project, and it reads the codebase, maps requirements to sections, and produces a publication-ready `.tex` + `.bib` output with zero code artifacts in the report body.
+An AI agent skill that generates IEEE-format technical reports as LaTeX. Point it at your project, and it reads the codebase, maps requirements to sections, and produces a publication-ready `.tex` + `.bib` output with zero code artifacts in the report body.
 
 ---
 
@@ -32,13 +32,9 @@ A Kiro skill that generates IEEE-format technical reports as LaTeX. Point it at 
 
 **1. Install the skill**
 
-Copy or symlink the `latex-report-creator/` folder into your Kiro skills directory:
+Copy the `latex-report-creator/` folder into your agent's skills directory.
 
-```
-~/.kiro/skills/latex-report-creator → /path/to/latex-report-creator
-```
-
-**2. Invoke in Kiro**
+**2. Invoke**
 
 ```
 Write an IEEE technical report for this project.
