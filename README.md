@@ -120,6 +120,18 @@ Found a bug, have a suggestion, or want to contribute a template?
 
 ---
 
+## Contributing
+
+Contributions are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide.
+
+Quick summary:
+- Fork → branch → commit → PR
+- Keep changes focused and minimal
+- Good targets: new example reports, checklist improvements, template variants, bug fixes in skill rules
+- Do not add project-specific content (university names, course codes, etc.)
+
+---
+
 ## License
 
 MIT
